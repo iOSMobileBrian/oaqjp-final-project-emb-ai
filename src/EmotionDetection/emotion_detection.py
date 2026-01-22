@@ -26,12 +26,12 @@ def emotion_detector(text_to_analyse):
     if response.status_code != 200:
         raise Exception(f"Request failed with status {response.status_code}: {response.text}")
     
-    return {
-        "text": text,
-        "anger": emotions["anger"],
-        "disgust": emotions["disgust"],
-        "fear": emotions["fear"],
-        "joy": emotions["joy"],
-        "sadness": emotions["sadness"],
-        "dominant_emotion": dominant_emotion
-    }
+    return (
+    f"For the given statement, the system response is "
+    f"'anger': {emotions['anger']}, "
+    f"'disgust': {emotions['disgust']}, "
+    f"'fear': {emotions['fear']}, "
+    f"'joy': {emotions['joy']} and "
+    f"'sadness': {emotions['sadness']}. "
+    f"The dominant emotion is {dominant_emotion}."
+    )
